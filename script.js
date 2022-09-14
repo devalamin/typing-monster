@@ -35,6 +35,7 @@ const typeController = (e) => {
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
+
     return;
   }
 
@@ -50,6 +51,7 @@ const typeController = (e) => {
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
+    errorCount++;
     gameOver();
   }
 };
@@ -136,4 +138,5 @@ setInterval(() => {
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
-}, 1000);
+},
+  1000);
